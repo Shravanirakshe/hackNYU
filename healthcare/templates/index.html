@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Care home</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        main {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        a {
+            width: 100%;
+            max-width: 200px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #eee;
+
+        }
+
+        a:hover {
+            background-color: #ddd;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+
+    </div>
+    </div>
+    <main>
+
+        <h1 style="font-family:georgia,garamond,serif;font-style:italic; color : rgb(192, 45, 96)">
+            Insta insure
+        </h1>
+        <h2>
+            Click the button to scan the QR code
+        </h2>
+        <a href="{{ url_for('show_details') }}"style="color:white;background-color: rgb(192, 45, 96) ; ">Scan</a>
+    </main>
+</body>
+
+</html>
