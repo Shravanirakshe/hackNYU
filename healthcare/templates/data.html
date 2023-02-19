@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Patient Data</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                font-family: sans-serif;
+            }
+            .center {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            h1 {
+                text-align: center;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1>Patient Data</h1>
+        <br/>
+        <table class = "center">
+            <tbody>
+                {% for key, value in data.items() %}
+                <tr>
+                    <td style="color : rgb(192, 45, 96); font-weight: bold">{{ key|e }}</td>
+                    <td> </td>
+                    <td>{{ value|e }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
