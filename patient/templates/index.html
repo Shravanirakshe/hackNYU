@@ -1,0 +1,122 @@
+<!-- templates/index.html -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR code generator</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        main {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            max-width: 200px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #eee;
+
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+
+        .qr-img {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .qr-img img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+
+    </div>
+    </div>
+    <main>
+
+        <h1 style="font-family:georgia,garamond,serif;font-style:italic; color : rgb(95, 95, 157)">
+            Insta insure
+        </h1>
+        <form method="post">
+            {% csrf_token %}
+
+            <label for="html">First Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter name">
+            <label for="html">Age</label>
+            <input type="number" name="age" id="age" placeholder="Enter age">
+            <label for="html">Phone number</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                placeholder="Enter phone number">
+
+            <!-- <label for="gender">Enter Gender</label> -->
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="css">Male</label>
+            <input type="radio" id="male" name="gender" value="male">
+
+            <label for="companies">Choose your company </label>
+            <select name="company" id="company">
+                <option value="unitedhealth">United Health</option>
+                <option value="humana">Humana</option>
+                <option value="cigna">Cigna</option>
+                <option value="highmark">Highmark</option>
+            </select>
+            <br>
+            <br>
+
+            <label for="plan">Choose your plan</label>
+            <select name="plan" id="plan">
+                <option value="single">Single</option>
+                <option value="family">Family</option>
+                <option value="group">Group</option>
+            </select>
+            <br>
+            <br>
+            <label for="html">Insurance number</label>
+            <input type="number" name="insurance_number" id="insurance_number" placeholder="Enter insurance number">
+
+            <button style="color:white;background-color:rgb(95, 95, 157) ; ">Generate</button>
+
+        </form>
+
+        <div class="qr-img">
+            {% if img_name %}
+
+            <img src="/media/{{ img_name }}" alt="qr code">
+            {% endif %}
+        </div>
+    </main>
+</body>
+
+</html>
