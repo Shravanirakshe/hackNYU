@@ -3,5 +3,5 @@ Insta insure is an idea that digitizes health insurance information into a QR co
 
 The patient folder is a Django app that generates the QR code embedded with all the necessary health insurance details.
 
-![alt text](https://github.com/Shravanirakshe/hackNYU/blob/main/patient/Screen Shot 2023-02-19 at 12.45.09 AM.png?raw=true)
+![Screenshot](./patient/screenshots/Screen Shot 2023-02-19 at 12.45.09 AM.png)
 
